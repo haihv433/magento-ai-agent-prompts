@@ -13,13 +13,14 @@ This repository is designed for AI coding assistants to understand, generate, an
 
 Use this repository to ensure AI tools follow proper Magento development practices.
 
-#### 🚀 Initial Setup Prompt
+#### 🚀 AI Tool Prompts
 
-**Copy and paste this prompt to your AI tool before starting any Magento task:**
+**Copy and paste one of these prompts to your AI tool:**
 
 | Title | Prompt |
 |-------|--------|
 | **Initial Setup** | I'm working on a Magento project and need your help. Please:<br><br>1. Clone or fetch the repository fresh from: https://github.com/haihv433/magento-ai-agent-prompts<br>2. Read all files in the /ai_instructions/ folder FIRST (MANDATORY)<br>3. Follow the instructions in /ai_instructions/ for all requirements<br><br>Please confirm you've read the repository and are ready to proceed. |
+| **Manual Update** | I need to update the repository manually. Please:<br><br>1. Clone or fetch the repository fresh from: https://github.com/haihv433/magento-ai-agent-prompts<br>2. Read all files in the /ai_instructions/ folder FIRST (MANDATORY)<br>3. Follow the instructions in /ai_instructions/ for all requirements<br>4. Check for any updates or changes in the repository<br><br>Please confirm you've updated and read the repository and are ready to proceed. |
 
 #### 📋 Task Assignment Format
 
