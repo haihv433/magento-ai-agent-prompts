@@ -14,17 +14,19 @@ This repository provides structured instructions for Magento development tasks. 
 ### 📚 Required Reading Order
 1. **Fresh repository access** - [`version_check.md`](./version_check.md) (MANDATORY - clone/fetch fresh)
 2. **This file** - [`mandatory_reading.md`](./mandatory_reading.md) (you are reading this now)
-3. **Response format** - [`response_format.md`](./response_format.md) (response labeling requirements)
-4. **Files in [`/magento/`](../magento/) folder** (for reference knowledge)
-5. **Task-specific files** in [`/prompts/`](../prompts/) folder (for execution)
+3. **Environment preparation** - [`environment_preparation.md`](./environment_preparation.md) (MANDATORY - prepare development environment)
+4. **Response format** - [`response_format.md`](./response_format.md) (response labeling requirements)
+5. **Files in [`/magento/`](../magento/) folder** (for reference knowledge)
+6. **Task-specific files** in [`/prompts/`](../prompts/) folder (for execution)
 
 ### 🔄 Workflow Requirements
 1. **Clone or fetch fresh repository** (MANDATORY)
 2. **Read this file completely** and confirm understanding
 3. **Read all files in `/ai_instructions/` folder** before proceeding
-4. **Follow the systematic approach** from `/magento/` folder
-5. **Execute tasks** using instructions from `/prompts/` folder
-6. **Use proper labeling** in all responses including fresh repo labels
+4. **Prepare development environment** using environment preparation instructions
+5. **Follow the systematic approach** from `/magento/` folder
+6. **Execute tasks** using instructions from `/prompts/` folder
+7. **Use proper labeling** in all responses including fresh repo labels
 
 ---
 
@@ -84,11 +86,13 @@ I am ready to proceed with your Magento development task.
 ### You MUST NOT:
 - **Skip fresh repository access** before reading other files
 - **Skip reading** any files in the `/ai_instructions/` folder
+- **Skip environment preparation** before executing tasks
 - **Proceed without confirmation** of understanding
 - **Provide responses without proper labeling**
 - **Ignore the systematic approach** from `/magento/` folder
 - **Execute tasks without reading** `/prompts/` folder instructions
 - **Assume** you have the latest repository version
+- **Assume** the development environment is properly configured
 
 ### Consequences of Non-Compliance:
 - **Incomplete responses** will be rejected
@@ -103,6 +107,7 @@ Before proceeding with any task, verify:
 
 - [ ] **Read this file completely** ✅
 - [ ] **Read all files in `/ai_instructions/` folder** ✅
+- [ ] **Environment preparation completed** ✅
 - [ ] **Understand the labeling requirements** ✅
 - [ ] **Know the systematic approach** from `/magento/` folder
 - [ ] **Know where to find task instructions** in `/prompts/` folder

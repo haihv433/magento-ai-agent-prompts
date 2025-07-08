@@ -120,11 +120,14 @@ Please:
 
 | User Task | Prompt Folder to Check |
 |-----------|----------------------|
+| "Check source code" | [`/prompts/`](./prompts/) (look for [`general_code_check.md`](./prompts/general_code_check.md)) |
 | "Fix Magento bugs" | [`/prompts/`](./prompts/) (look for [`fix_magento_bugs.md`](./prompts/fix_magento_bugs.md)) |
 | "Fix outdated module code" | [`/prompts/`](./prompts/) (look for fix-related files) |
 | "Debug Magento issue" | [`/prompts/`](./prompts/) (look for debug-related files) |
 | "Create new module" | [`/prompts/`](./prompts/) (look for module development files) |
 | "Update API integration" | [`/prompts/`](./prompts/) (look for API-related files) |
+
+**Note**: Environment preparation is now a mandatory first step for all AI tools and is handled automatically in the `/ai_instructions/` folder.
 
 ---
 
@@ -132,6 +135,7 @@ Please:
 
 ### Before Any Task:
 - **ALWAYS read ALL files in [`/ai_instructions/`](./ai_instructions/) folder FIRST** (MANDATORY)
+- **ALWAYS prepare the development environment** using environment preparation instructions
 - **ALWAYS read the relevant prompt file** from [`/prompts/`](./prompts/) folder (for task execution)
 - **ALWAYS read ALL files in [`/magento/`](./magento/) folder** (MANDATORY - for understanding structure and scope)
 - **ALWAYS follow the mandatory reading requirements** specified in each prompt filence)
