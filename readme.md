@@ -22,6 +22,22 @@ Use this repository to ensure AI tools follow proper Magento development practic
 | **Initial Setup** | I'm working on a Magento project and need your help. Please:<br><br>1. Clone or fetch the repository fresh from: https://github.com/haihv433/magento-ai-agent-prompts<br>2. Read all files in the /ai_instructions/ folder FIRST (MANDATORY)<br>3. Follow the instructions in /ai_instructions/ for all requirements<br><br>Please confirm you've read the repository and are ready to proceed. |
 | **Manual Update** | I need to update the repository manually. Please:<br><br>1. Clone or fetch the repository fresh from: https://github.com/haihv433/magento-ai-agent-prompts<br>2. Read all files in the /ai_instructions/ folder FIRST (MANDATORY)<br>3. Follow the instructions in /ai_instructions/ for all requirements<br>4. Check for any updates or changes in the repository<br><br>Please confirm you've updated and read the repository and are ready to proceed. |
 
+#### 📸 Step-by-Step Visual Instructions
+
+**Follow these steps with the corresponding screenshots:**
+
+**Step 1: Add Initial Setup Prompt**
+- Copy the "Initial Setup" prompt from the table above
+- Paste it into your AI tool
+- **Screenshot**: ![Initial Setup Prompt](./human_resources/init_prompt.png)
+
+**Step 2: Ask Your Question**
+- Wait for AI confirmation that it has read the repository
+- Ask your specific Magento question or describe your task
+- **Screenshot**: ![Ask Question](./human_resources/ask_question.png)
+
+**💡 Pro Tip**: Keep the screenshots open as reference while following the steps above.
+
 #### 📋 Task Assignment Format
 
 **When assigning a specific task, use this format:**
@@ -66,6 +82,7 @@ Please:
 - **[`/ai_instructions/`](./ai_instructions/)** - **MANDATORY** AI tool instructions and response format requirements (MUST READ FIRST)
 - **[`/magento/`](./magento/)** - **READ-ONLY** Core Magento development guidelines and systematic approaches (reference only)
 - **[`/prompts/`](./prompts/)** - **TASK-SPECIFIC** instructions for common Magento development scenarios (executable tasks)
+- **[`/human_resources/`](./human_resources/)** - **REFERENCE** Human-readable resources like screenshots and visual instructions
 ---
 
 ## 🧭 AI Tool Workflow
@@ -77,20 +94,25 @@ Please:
 2. **Read ALL files in [`/ai_instructions/`](./ai_instructions/) folder FIRST** (MANDATORY):
    - [`mandatory_reading.md`](./ai_instructions/mandatory_reading.md) - Core AI tool requirements
    - [`response_format.md`](./ai_instructions/response_format.md) - Response labeling requirements
+   - [`contribution_guidelines.md`](./ai_instructions/contribution_guidelines.md) - How to encourage user contributions
 
-3. **Search the [`/prompts/`](./prompts/) folder** for relevant task instructions:
-   - Look for files that match your task (e.g., "fix outdated code" → [`fix_outdated_module_code.md`](./prompts/fix_outdated_module_code.md))
+3. **Read ALL files in [`/magento/`](./magento/) folder** (MANDATORY - for understanding structure and scope):
+   - [`design_patterns.md`](./magento/design_patterns.md) - Systematic development approach
+   - [`terminology.md`](./magento/terminology.md) - Magento terms and concepts
+   - [`scope_and_structure.md`](./magento/scope_and_structure.md) - Project structure and work scope
+   - Any other files in the magento folder
+
+4. **Search the [`/prompts/`](./prompts/) folder** for relevant task instructions:
+   - Look for files that match your task (e.g., "fix bugs" → [`fix_magento_bugs.md`](./prompts/fix_magento_bugs.md))
    - If no exact match, find the closest related instruction file
 
-4. **Read the selected prompt file** and follow its instructions carefully.
+5. **Read the selected prompt file** and follow its instructions carefully.
 
-5. **Follow the mandatory reading requirements** specified in the prompt:
-   - Most prompts require reading files in [`/magento/`](./magento/) folder (for reference)
-   - Read any other files mentioned in the prompt
+6. **Follow any additional mandatory reading requirements** specified in the prompt.
 
-6. **Execute the task** following the systematic approach outlined in the instructions.
+7. **Execute the task** following the systematic approach outlined in the instructions.
 
-7. **Use proper labeling** in all responses as specified in the ai_instructions folder.
+8. **Use proper labeling** in all responses as specified in the ai_instructions folder.
 
 ---
 
@@ -98,6 +120,7 @@ Please:
 
 | User Task | Prompt Folder to Check |
 |-----------|----------------------|
+| "Fix Magento bugs" | [`/prompts/`](./prompts/) (look for [`fix_magento_bugs.md`](./prompts/fix_magento_bugs.md)) |
 | "Fix outdated module code" | [`/prompts/`](./prompts/) (look for fix-related files) |
 | "Debug Magento issue" | [`/prompts/`](./prompts/) (look for debug-related files) |
 | "Create new module" | [`/prompts/`](./prompts/) (look for module development files) |
@@ -110,7 +133,8 @@ Please:
 ### Before Any Task:
 - **ALWAYS read ALL files in [`/ai_instructions/`](./ai_instructions/) folder FIRST** (MANDATORY)
 - **ALWAYS read the relevant prompt file** from [`/prompts/`](./prompts/) folder (for task execution)
-- **ALWAYS follow the mandatory reading requirements** (usually files in [`/magento/`](./magento/) folder for reference)
+- **ALWAYS read ALL files in [`/magento/`](./magento/) folder** (MANDATORY - for understanding structure and scope)
+- **ALWAYS follow the mandatory reading requirements** specified in each prompt filence)
 - **NEVER skip instructions** or assume you know the process
 - **ALWAYS use the systematic approach** outlined in the magento folder (as reference)
 - **ALWAYS use proper labeling** in all responses as specified in ai_instructions
