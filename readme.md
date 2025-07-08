@@ -19,8 +19,8 @@ Use this repository to ensure AI tools follow proper Magento development practic
 
 | Title | Prompt |
 |-------|--------|
-| **Initial Setup** | I'm working on a Magento project and need your help. Please:<br><br>1. Clone or fetch the repository fresh from: https://github.com/haihv433/magento-ai-agent-prompts<br>2. Read all files in the /ai_instructions/ folder FIRST (MANDATORY)<br>3. Follow the instructions in /ai_instructions/ for all requirements<br><br>Please confirm you've read the repository and are ready to proceed. |
-| **Manual Update** | I need to update the repository manually. Please:<br><br>1. Clone or fetch the repository fresh from: https://github.com/haihv433/magento-ai-agent-prompts<br>2. Read all files in the /ai_instructions/ folder FIRST (MANDATORY)<br>3. Follow the instructions in /ai_instructions/ for all requirements<br>4. Check for any updates or changes in the repository<br><br>Please confirm you've updated and read the repository and are ready to proceed. |
+| **Initial Setup** | I'm working on a Magento project and need your help. Please:<br><br>1. Check if the repository is already cloned locally, if so pull latest updates, otherwise clone fresh from: https://github.com/haihv433/magento-ai-agent-prompts<br>2. Read ALL files in the /ai_instructions/ folder SIMULTANEOUSLY (MANDATORY)<br>3. Follow the instructions in /ai_instructions/ for all requirements<br><br>Please confirm you've read the repository and are ready to proceed. |
+| **Manual Update** | I need to update the repository manually. Please:<br><br>1. Check if the repository is already cloned locally, if so pull latest updates, otherwise clone fresh from: https://github.com/haihv433/magento-ai-agent-prompts<br>2. Read ALL files in the /ai_instructions/ folder SIMULTANEOUSLY (MANDATORY)<br>3. Follow the instructions in /ai_instructions/ for all requirements<br>4. Check for any updates or changes in the repository<br><br>Please confirm you've updated and read the repository and are ready to proceed. |
 
 #### 📸 Step-by-Step Visual Instructions
 
@@ -33,45 +33,30 @@ Use this repository to ensure AI tools follow proper Magento development practic
 
 **Step 2: Ask Your Question**
 - Wait for AI confirmation that it has read the repository
-- Ask your specific Magento question or describe your task
+- Ask your Magento question or describe your task
+- The AI will ask clarifying questions if needed
 - **Screenshot**: ![Ask Question](./human_resources/ask_question.png)
 
-**💡 Pro Tip**: Keep the screenshots open as reference while following the steps above.
-
-#### 📋 Task Assignment Format
-
-**When assigning a specific task, use this format:**
-
-```
-Task: [Your specific task description]
-Example: "Fix outdated module code" or "Debug Magento issue" or "Create new module"
-
-Please:
-1. Find the relevant instruction file in the /prompts/ folder
-2. Follow all mandatory reading requirements
-3. Execute the task using the systematic approach
-4. Provide clear explanations for your changes
-```
-
-#### 🎯 Example Usage
-
-**User:** "I need help fixing an outdated Magento module that has compatibility issues."
-
-**AI Tool should:**
-1. Clone or fetch the repository fresh
-2. Read the repository structure from readme.md
-3. Read the systematic approach from [`/magento/`](./magento/) folder (for reference)
-4. Find and read the relevant instruction file in [`/prompts/`](./prompts/) folder (for task execution)
-5. Follow the step-by-step workflow
-6. Apply the systematic approach for reference code checking
-7. Provide a solution that maintains Magento compatibility
 
 #### ⚠️ Important Notes for Users
 
 - **Always start with the initial setup prompt** to ensure the AI tool understands the repository
-- **Be specific about your task** so the AI can find the right instruction file
 - **Wait for confirmation** that the AI has read the repository before proceeding
-- **Reference the repository link** in your initial prompt
+- **The AI will ask clarifying questions** if your request needs more details
+
+#### 🔄 Smart Repository Management
+
+**AI tools will automatically:**
+1. **Check if repository exists locally** in the current directory
+2. **If found**: Pull latest updates using `git pull origin main`
+3. **If not found**: Clone fresh from the repository URL
+4. **Verify repository integrity** and ensure all files are accessible
+
+**This ensures:**
+- **Faster setup** when repository is already available
+- **Always up-to-date** instructions and prompts
+- **No duplicate cloning** or unnecessary downloads
+- **Seamless updates** without manual intervention
 
 ---
 
@@ -91,28 +76,36 @@ Please:
 
 1. **Read this readme.md completely** to understand the repository structure.
 
-2. **Read ALL files in [`/ai_instructions/`](./ai_instructions/) folder FIRST** (MANDATORY):
+2. **Read ALL files in [`/ai_instructions/`](./ai_instructions/) folder SIMULTANEOUSLY** (MANDATORY):
    - [`mandatory_reading.md`](./ai_instructions/mandatory_reading.md) - Core AI tool requirements
+   - [`requirement_clarification.md`](./ai_instructions/requirement_clarification.md) - Requirement clarification process
+   - [`environment_preparation.md`](./ai_instructions/environment_preparation.md) - Environment setup and configuration
+   - [`task_local_storage.md`](./ai_instructions/task_local_storage.md) - Task-specific local storage system
    - [`response_format.md`](./ai_instructions/response_format.md) - Response labeling requirements
    - [`contribution_guidelines.md`](./ai_instructions/contribution_guidelines.md) - How to encourage user contributions
 
-3. **Read ALL files in [`/magento/`](./magento/) folder** (MANDATORY - for understanding structure and scope):
+3. **Clarify requirements** using the requirement clarification process:
+   - Assess if the user's request is clear, abstract, ambiguous, vague, or complex
+   - Ask targeted questions to narrow down scope and understand needs
+   - Confirm understanding before proceeding
+
+4. **Read ALL files in [`/magento/`](./magento/) folder** (MANDATORY - for understanding structure and scope):
    - [`design_patterns.md`](./magento/design_patterns.md) - Systematic development approach
    - [`terminology.md`](./magento/terminology.md) - Magento terms and concepts
    - [`scope_and_structure.md`](./magento/scope_and_structure.md) - Project structure and work scope
    - Any other files in the magento folder
 
-4. **Search the [`/prompts/`](./prompts/) folder** for relevant task instructions:
+5. **Search the [`/prompts/`](./prompts/) folder** for relevant task instructions:
    - Look for files that match your task (e.g., "fix bugs" → [`fix_magento_bugs.md`](./prompts/fix_magento_bugs.md))
    - If no exact match, find the closest related instruction file
 
-5. **Read the selected prompt file** and follow its instructions carefully.
+6. **Read the selected prompt file** and follow its instructions carefully.
 
-6. **Follow any additional mandatory reading requirements** specified in the prompt.
+7. **Follow any additional mandatory reading requirements** specified in the prompt.
 
-7. **Execute the task** following the systematic approach outlined in the instructions.
+8. **Execute the task** following the systematic approach outlined in the instructions.
 
-8. **Use proper labeling** in all responses as specified in the ai_instructions folder.
+9. **Use proper labeling** in all responses as specified in the ai_instructions folder.
 
 ---
 
@@ -134,11 +127,11 @@ Please:
 ## 🚨 Critical Instructions for AI Tools
 
 ### Before Any Task:
-- **ALWAYS read ALL files in [`/ai_instructions/`](./ai_instructions/) folder FIRST** (MANDATORY)
+- **ALWAYS read ALL files in [`/ai_instructions/`](./ai_instructions/) folder SIMULTANEOUSLY** (MANDATORY - for speed)
 - **ALWAYS prepare the development environment** using environment preparation instructions
 - **ALWAYS read the relevant prompt file** from [`/prompts/`](./prompts/) folder (for task execution)
 - **ALWAYS read ALL files in [`/magento/`](./magento/) folder** (MANDATORY - for understanding structure and scope)
-- **ALWAYS follow the mandatory reading requirements** specified in each prompt filence)
+- **ALWAYS follow the mandatory reading requirements** specified in each prompt file
 - **NEVER skip instructions** or assume you know the process
 - **ALWAYS use the systematic approach** outlined in the magento folder (as reference)
 - **ALWAYS use proper labeling** in all responses as specified in ai_instructions
@@ -158,7 +151,14 @@ Always read and process all sections in the relevant files before performing or 
 
 **Remember**: The [`/magento/`](./magento/) folder contains the **reference knowledge** (read-only), and [`/prompts/`](./prompts/) folder contains the **executable task instructions**. Both must be read and followed.
 
-**🚨 MANDATORY: After reading this readme.md, you MUST read ALL files in the [`/ai_instructions/`](./ai_instructions/) folder FIRST, then read the files in the [`/magento/`](./magento/) folder for reference before proceeding with any task.**
+**🚨 MANDATORY: After reading this readme.md, you MUST read ALL files in the [`/ai_instructions/`](./ai_instructions/) folder SIMULTANEOUSLY, then read the files in the [`/magento/`](./magento/) folder for reference before proceeding with any task.**
+
+**💡 Speed Optimization Tips:**
+- **Smart repository management**: Check if repo exists locally, pull updates if found, clone fresh if not
+- **Read files simultaneously** rather than one by one to reduce setup time
+- **Use batch reading** for multiple files in the same folder
+- **Prioritize mandatory files** first, then reference files
+- **Cache environment configuration** to avoid repeated setup
 
 ---
 
