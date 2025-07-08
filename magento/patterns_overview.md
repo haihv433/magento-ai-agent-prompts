@@ -1,12 +1,14 @@
-# AI Agent Guide: Magento Reference Code Checking Protocol
+# 🏗️ AI Agent Guide: Magento Reference Code Checking Protocol
 
-## Purpose
+## 🎯 Purpose
 This guide is for AI agents to systematically check reference code in `vendor/magento/` before proposing any fixes or modifications to Magento modules. This ensures compatibility and prevents breaking changes.
 
-## Core Principle
+## 🚨 Core Principle
 **ALWAYS check the reference code first before making any assumptions about method signatures, class structures, or behavior.**
 
-## Systematic Approach
+---
+
+## 🔍 Systematic Approach
 
 ### Step 1: Identify the Target Class/Method
 When a user reports an issue or requests a fix:
@@ -54,7 +56,9 @@ Based on the reference code analysis:
 3. **Follow the same patterns** as Magento core
 4. **Document why** the fix is needed
 
-## Common Scenarios and Workflows
+---
+
+## 🔧 Common Scenarios and Workflows
 
 ### Scenario 1: Plugin Compatibility Issues
 
@@ -120,7 +124,9 @@ find vendor/magento/ -name "*.php" -exec grep -l "interface.*RepositoryInterface
 find vendor/magento/ -name "*.php" -exec grep -l "class.*ParentClassName" {} \;
 ```
 
-## Reference Code Search Patterns
+---
+
+## 🔍 Reference Code Search Patterns
 
 ### For Classes
 ```bash
@@ -149,7 +155,9 @@ grep -r "interface.*InterfaceName" vendor/magento/module-* --include="*.php"
 grep -r "function.*methodName" vendor/magento/module-* --include="*.php" | grep "interface"
 ```
 
-## Common Magento Module Locations
+---
+
+## 📁 Common Magento Module Locations
 
 ### Core Modules
 - **Sales**: `vendor/magento/module-sales/`
@@ -172,7 +180,9 @@ vendor/magento/module-name/
 └── view/                   # Frontend files
 ```
 
-## Validation Checklist
+---
+
+## ✅ Validation Checklist
 
 Before proposing any fix, verify:
 
@@ -184,7 +194,9 @@ Before proposing any fix, verify:
 - [ ] **Class inheritance is proper**
 - [ ] **Interface implementation is complete**
 
-## Error Prevention
+---
+
+## 🚫 Error Prevention
 
 ### Common Mistakes to Avoid
 
@@ -201,90 +213,10 @@ Before proposing any fix, verify:
 - Missing required parameters
 - Wrong interface implementation
 
-## Example Workflows
+---
 
-### Workflow 1: Fixing Plugin Parameter Mismatch
+## 🔗 Related Files
 
-**User Issue**: "Plugin method signature doesn't match"
-
-**AI Agent Steps**:
-1. Find target class in vendor/magento/
-2. Read actual method signature
-3. Compare with user's plugin
-4. Propose exact match fix
-
-**Example**:
-```bash
-# Step 1: Find the method
-grep -r "public function applyRules" vendor/magento/module-sales-rule/ --include="*.php"
-
-# Step 2: Read the actual signature
-# vendor/magento/module-sales-rule/Model/RulesApplier.php:110
-public function applyRules($item, $rules, $skipValidation, array $couponCodes = [])
-
-# Step 3: Fix plugin to match exactly
-```
-
-### Workflow 2: Interface Implementation
-
-**User Issue**: "Interface method not implemented correctly"
-
-**AI Agent Steps**:
-1. Find interface in vendor/magento/
-2. Read all required methods
-3. Check implementation completeness
-4. Propose missing methods
-
-### Workflow 3: Class Extension
-
-**User Issue**: "Extended class has compatibility issues"
-
-**AI Agent Steps**:
-1. Find parent class in vendor/magento/
-2. Check all overridden methods
-3. Verify method signatures
-4. Propose compatible overrides
-
-## Tools and Commands
-
-### Essential Search Commands
-```bash
-# Find class definitions
-find vendor/magento/ -name "*.php" -exec grep -l "class.*ClassName" {} \;
-
-# Find method signatures
-grep -r "public function.*methodName" vendor/magento/module-* --include="*.php"
-
-# Find interface definitions
-find vendor/magento/ -name "*.php" -exec grep -l "interface.*InterfaceName" {} \;
-
-# Search in specific module
-grep -r "searchTerm" vendor/magento/module-specific-name/ --include="*.php"
-```
-
-### File Reading Commands
-```bash
-# Read specific file
-cat vendor/magento/module-name/Model/ClassName.php
-
-# Read specific lines
-sed -n '100,120p' vendor/magento/module-name/Model/ClassName.php
-
-# Find method in file
-grep -n "public function" vendor/magento/module-name/Model/ClassName.php
-```
-
-## Documentation Standards
-
-When proposing fixes, always include:
-
-1. **Reference code location**: `vendor/magento/module-name/path/to/file.php:line`
-2. **Original method signature**: Exact signature from reference
-3. **Proposed fix**: Code that matches reference exactly
-4. **Explanation**: Why the fix is needed and how it matches reference
-
-## Conclusion
-
-This systematic approach ensures that all proposed fixes are compatible with Magento's core code. Always check the reference first, then propose solutions that match exactly.
-
-**Remember**: When in doubt, check the reference code in `vendor/magento/` before making any assumptions or proposals. 
+- **[`patterns_implementation.md`](./patterns_implementation.md)** - Implementation Workflows and Tools
+- **[`terminology.md`](./terminology.md)** - Magento terms and concepts
+- **[`scope_and_structure.md`](./scope_and_structure.md)** - Project structure and work scope 

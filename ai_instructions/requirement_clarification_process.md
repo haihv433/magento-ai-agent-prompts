@@ -1,4 +1,4 @@
-# 🎯 MANDATORY: AI Tool Requirement Clarification
+# 🎯 MANDATORY: AI Tool Requirement Clarification Process
 
 ## 🚨 CRITICAL: READ THIS FILE FIRST
 **BEFORE executing ANY task, you MUST ensure requirements are clear, specific, and actionable. This prevents wasted effort, incorrect implementations, and ensures successful task completion.**
@@ -251,103 +251,8 @@ Your request involves multiple components. Let me break this down:
 
 ---
 
-## 🔄 Clarification Workflow
+## 🔗 Related Files
 
-### **Step 1: Initial Assessment**
-1. **Read the user's request** completely
-2. **Categorize the requirement type** (Clear, Abstract, Ambiguous, Vague, Complex)
-3. **Identify missing information** based on the category
-
-### **Step 2: Ask Targeted Questions**
-1. **Use the appropriate question template** based on requirement type
-2. **Ask 3-5 specific questions** to narrow down the scope
-3. **Focus on the most critical missing information** first
-
-### **Step 3: Refine Understanding**
-1. **Listen to user responses** carefully
-2. **Ask follow-up questions** if needed
-3. **Confirm understanding** before proceeding
-
-### **Step 4: Scope Definition**
-1. **Summarize the clarified requirements**
-2. **Define clear success criteria**
-3. **Establish implementation approach**
-
----
-
-## ✅ Validation Checklist
-
-**Before proceeding with any task, ensure:**
-
-- [ ] **Requirement type identified** and appropriate clarification questions asked
-- [ ] **Specific functionality defined** with clear objectives
-- [ ] **Scope boundaries established** (what's in/out of scope)
-- [ ] **Technical context understood** (Magento version, modules, constraints)
-- [ ] **Success criteria defined** (how to measure completion)
-- [ ] **Implementation approach agreed** (method, timeline, resources)
-- [ ] **User confirmation received** that requirements are clear and complete
-
----
-
-## 🚫 Common Mistakes to Avoid
-
-### **Don't:**
-- ❌ **Assume requirements are clear** without verification
-- ❌ **Start coding immediately** with ambiguous requirements
-- ❌ **Ask too many questions at once** (overwhelm the user)
-- ❌ **Ignore user context** and Magento-specific considerations
-- ❌ **Proceed without user confirmation** of clarified requirements
-
-### **Do:**
-- ✅ **Always assess requirement clarity** before proceeding
-- ✅ **Ask targeted, specific questions** to narrow scope
-- ✅ **Use Magento-specific context** in your questions
-- ✅ **Confirm understanding** before implementation
-- ✅ **Document clarified requirements** for future reference
-
----
-
-## 📝 Example Clarification Session
-
-**User Request**: "I need to fix the checkout process"
-
-**AI Tool Response**:
-```
-🎯 **Clarification Needed - Vague Requirement**
-
-Your request "fix the checkout process" is quite broad. To provide the best solution, I need to understand:
-
-**Specific Issues:**
-- What exactly is wrong with the checkout process?
-- Are customers experiencing errors, or is it just slow?
-- Which step of checkout is problematic (cart, shipping, payment, etc.)?
-
-**User Impact:**
-- How are customers affected? (errors, timeouts, confusion?)
-- Are you losing sales due to checkout issues?
-- Which customer segments are most affected?
-
-**Technical Context:**
-- What Magento version are you using?
-- Any specific payment methods or shipping methods involved?
-- Any custom modules that might affect checkout?
-
-**Expected Outcome:**
-- What should the fixed checkout process look like?
-- Any specific performance targets?
-- Timeline for the fix?
-
-Please provide these details so I can give you the most effective solution.
-```
-
----
-
-## 🔄 Integration with Other Instructions
-
-**This clarification process should be used:**
-- **Before** reading environment preparation instructions
-- **Before** executing any prompt from the `/prompts/` folder
-- **Before** applying any systematic approach from the `/magento/` folder
-- **Throughout** the development process when new requirements emerge
-
-**Remember**: Clear requirements lead to successful implementations. Always clarify before you code! 
+- **[`requirement_clarification_workflow.md`](./requirement_clarification_workflow.md)** - Clarification Workflow and Best Practices
+- **[`environment_preparation.md`](./environment_preparation.md)** - Environment setup and configuration
+- **[`task_storage_structure.md`](./task_storage_structure.md)** - Task storage file structure and templates 

@@ -1,4 +1,4 @@
-# 📁 MANDATORY: AI Tool Task Local Storage System
+# 📁 MANDATORY: AI Tool Task Local Storage Structure
 
 ## 🚨 CRITICAL: READ THIS FILE FIRST
 **BEFORE starting ANY task, you MUST create a task-specific local storage file to track progress, capture insights, and store reusable information. This creates a knowledge base for future tasks and ensures continuity.**
@@ -6,7 +6,7 @@
 ---
 
 ## 📋 Purpose
-This file establishes a systematic approach for AI tools to create, maintain, and utilize task-specific local storage files (`.local.md`) that capture all relevant information, progress, and insights during task execution. This creates a valuable knowledge base for future tasks and ensures no important information is lost.
+This file establishes the structure and format for AI tools to create task-specific local storage files (`.local.md`) that capture all relevant information, progress, and insights during task execution. This creates a valuable knowledge base for future tasks and ensures no important information is lost.
 
 **Key Benefits:**
 - **Knowledge Preservation**: Capture all insights and solutions for future reference
@@ -244,120 +244,11 @@ Examples:
 
 > **Note**: This task local storage file contains all information related to this specific task.  
 > It should be updated continuously as the task progresses and can be referenced for future similar tasks.
-```
 
 ---
 
-## 🔄 AI Tool Workflow for Task Local Storage
+## 🔗 Related Files
 
-### **Step 1: Pre-Task Setup**
-1. **Scan existing local storage files** for relevant information
-2. **Create new task file** using the naming convention
-3. **Load environment configuration** from `{project}.local.md`
-4. **Document original request** and clarified requirements
-
-### **Step 2: During Task Execution**
-1. **Update progress** in real-time as work progresses
-2. **Document all decisions** and their rationale
-3. **Capture technical insights** and learnings
-4. **Record issues encountered** and solutions found
-5. **Track file modifications** and code changes
-
-### **Step 3: Post-Task Completion**
-1. **Finalize all sections** with complete information
-2. **Update status** to "Completed"
-3. **Document validation results** and testing performed
-4. **Add future considerations** and maintenance notes
-5. **Link to related tasks** and files
-
----
-
-## 📁 File Management
-
-### **File Organization**
-```
-magento-ai-agent-prompts/
-├── {project}.local.md                    # Environment configuration
-├── {question1}.{date1}.local.md          # Task 1
-├── {question2}.{date2}.local.md          # Task 2
-├── {question3}.{date3}.local.md          # Task 3
-├── ai_instructions/
-├── magento/
-├── prompts/
-└── human_resources/
-```
-
-### **File Naming Guidelines**
-- **Use descriptive names**: `fix-checkout-errors` not `fix`
-- **Include date-time**: `2024-01-15-14-30` format
-- **Use hyphens**: Separate words with hyphens
-- **Keep it concise**: But descriptive enough to understand
-
-### **File Maintenance**
-- **Archive old files**: Move completed tasks to archive folder
-- **Update references**: Keep links between related files current
-- **Clean up**: Remove obsolete information periodically
-
----
-
-## 🔍 Information Retrieval
-
-### **Searching Local Storage Files**
-AI tools should search for:
-1. **Similar task patterns** in previous files
-2. **Technical solutions** to similar problems
-3. **Code patterns** and configurations
-4. **Issue resolutions** for common problems
-5. **Best practices** and learnings
-
-### **Information Reuse**
-- **Copy relevant sections** from previous tasks
-- **Adapt solutions** to current context
-- **Reference previous work** to avoid duplication
-- **Build on existing knowledge** rather than starting from scratch
-
----
-
-## ✅ Validation Checklist
-
-**For each task, ensure:**
-
-- [ ] **Task file created** with proper naming convention
-- [ ] **Existing files scanned** for relevant information
-- [ ] **Environment config loaded** from project file
-- [ ] **Progress tracked** continuously throughout task
-- [ ] **All decisions documented** with rationale
-- [ ] **Technical insights captured** for future use
-- [ ] **Issues and solutions recorded** for reference
-- [ ] **File updated** at task completion
-- [ ] **Related tasks linked** for continuity
-
----
-
-## 🚫 Common Mistakes to Avoid
-
-### **Don't:**
-- ❌ **Skip file creation** for "simple" tasks
-- ❌ **Forget to update** progress during execution
-- ❌ **Ignore existing files** when starting new tasks
-- ❌ **Document only at the end** (lose valuable insights)
-- ❌ **Use generic names** that don't describe the task
-
-### **Do:**
-- ✅ **Always create a task file** before starting work
-- ✅ **Update continuously** as work progresses
-- ✅ **Search existing files** for relevant information
-- ✅ **Capture insights immediately** when discovered
-- ✅ **Use descriptive file names** for easy identification
-
----
-
-## 🔄 Integration with Other Instructions
-
-**This task local storage system works with:**
-- **Requirement Clarification**: Document clarified requirements
-- **Environment Preparation**: Load and reference environment config
-- **Systematic Approaches**: Track application of Magento patterns
-- **Prompt Execution**: Document prompt-specific work and results
-
-**Remember**: Every task creates valuable knowledge. Capture it systematically for future use! 
+- **[`task_storage_workflow.md`](./task_storage_workflow.md)** - AI Tool Workflow for Task Local Storage
+- **[`environment_preparation.md`](./environment_preparation.md)** - Environment setup and configuration
+- **[`requirement_clarification.md`](./requirement_clarification.md)** - Requirement clarification process 

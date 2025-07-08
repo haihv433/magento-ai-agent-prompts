@@ -1,20 +1,9 @@
-# AI Agent Instruction: Fix Outdated Module/Code
-
-## 🚨 CRITICAL: READ ALL MAGENTO FOLDER INSTRUCTIONS FIRST
-
-**BEFORE performing any task, you MUST read and understand ALL instructions in the [`/magento/`](../magento/) folder.**
-
-### Required Reading Order:
-1. **[`design_patterns.md`](../magento/design_patterns.md)** - Complete systematic approach for Magento development
-2. **Any other files in [`/magento/`](../magento/) folder** - Additional Magento-specific guidelines
-
-**Do not proceed with any code changes until you have completed this reading.**
-
----
+# 🔧 AI Agent Instruction: Fix Outdated Module/Code
 
 ## 📋 Task Overview
-
 This instruction guides AI agents through identifying and fixing outdated Magento module code while maintaining compatibility with the current Magento version.
+
+**Note**: This prompt assumes you have already read all mandatory files as required in the README.
 
 ## 🎯 Common Outdated Code Scenarios
 

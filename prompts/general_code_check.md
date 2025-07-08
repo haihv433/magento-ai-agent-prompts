@@ -1,17 +1,9 @@
 # 🔍 AI Agent Instruction: General Code Check
 
-## 🚨 CRITICAL: READ ALL MAGENTO FOLDER INSTRUCTIONS FIRST
-**BEFORE performing any code checking task, you MUST read and understand ALL instructions in the [`/magento/`](../magento/) folder.**
-
-### Required Reading Order:
-1. **[`design_patterns.md`](../magento/design_patterns.md)** - Complete systematic approach for Magento development
-2. **[`terminology.md`](../magento/terminology.md)** - Magento-specific terms and concepts
-3. **Any other files in [`/magento/`](../magento/) folder** - Additional Magento-specific guidelines
-
----
-
 ## 📋 Task Overview
 Perform comprehensive code checking and analysis of Magento applications to identify issues, verify code quality, and ensure proper functionality. This includes syntax checking, error detection, compatibility verification, and performance analysis.
+
+**Note**: This prompt assumes you have already read all mandatory files as required in the README.
 
 ---
 

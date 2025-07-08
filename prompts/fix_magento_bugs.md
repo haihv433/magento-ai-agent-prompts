@@ -1,17 +1,9 @@
 # 🐛 AI Agent Instruction: Fix Magento Bugs
 
-## 🚨 CRITICAL: READ ALL MAGENTO FOLDER INSTRUCTIONS FIRST
-**BEFORE performing any bug fixing task, you MUST read and understand ALL instructions in the [`/magento/`](../magento/) folder.**
-
-### Required Reading Order:
-1. **[`design_patterns.md`](../magento/design_patterns.md)** - Complete systematic approach for Magento development
-2. **[`terminology.md`](../magento/terminology.md)** - Magento-specific terms and concepts
-3. **Any other files in [`/magento/`](../magento/) folder** - Additional Magento-specific guidelines
-
----
-
 ## 📋 Task Overview
 Fix bugs and issues in Magento applications by following a systematic debugging approach that maintains code quality and Magento best practices.
+
+**Note**: This prompt assumes you have already read all mandatory files as required in the README.
 
 ---
 
