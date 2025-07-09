@@ -1,42 +1,42 @@
 # 🔧 MANDATORY: AI Tool Environment Preparation
 
 ## 🚨 CRITICAL: READ THIS FILE FIRST
-**BEFORE performing ANY task, you MUST prepare and verify the Magento development environment. This ensures proper PHP version compatibility, tool availability, and clean development state.**
+**This file contains the environment preparation and configuration instructions for AI tools working with Magento projects.**
 
-## 🔧 How AI Tools Should Use Environment Configuration
+---
 
-**AI Tools Workflow:**
+## 🚨 MANDATORY: File Location Requirements
 
-1. **First Priority: Read Existing Configuration**
-   - Check if `env.local.md` exists in the **magento-ai-agent-prompts repository root directory**
-   - If found, read and parse the configuration file
-   - Use the stored environment information for all operations
-   - Skip environment setup if configuration is complete and valid
+### **CRITICAL: ALL AI-Created Support Files MUST Be Created in This Repository**
 
-2. **Second Priority: Create New Configuration (if not exists)**
-   - If no `env.local.md` file exists in the **magento-ai-agent-prompts repository root**, proceed with environment setup
-   - Ask user for consent to create the configuration file
-   - Offer manual configuration or auto-detection options
-   - Save configuration to `env.local.md` in the **magento-ai-agent-prompts repository root directory**
+**🚨 NEVER create support files in the Magento project root directory!**
 
-3. **When running commands, AI tools should:**
-   - Check if `env.local.md` exists
-   - Parse the file to extract environment variables
-   - Use the saved paths for running commands
+**✅ ALWAYS create ALL support files in the magento-ai-agent-prompts repository root:**
 
-4. **Use the saved paths for commands:**
-   - Use `PHP_PATH` from config for PHP commands
-   - Use `COMPOSER_PATH` from config for Composer commands
-   - Use `NPM_PATH` from config for npm commands
-   - Verify paths exist before using them
+| File Type | Examples | Location |
+|-----------|----------|----------|
+| **Local Storage Files** | `.local.md`, `.md` | magento-ai-agent-prompts repository root |
+| **Testing Files** | `test_*.md`, `testing_*.md` | magento-ai-agent-prompts repository root |
+| **Bash Scripts** | `*.sh`, `*.bash` | magento-ai-agent-prompts repository root |
+| **Documentation** | `docs_*.md`, `notes_*.md` | magento-ai-agent-prompts repository root |
+| **Configuration** | `config_*.md`, `setup_*.md` | magento-ai-agent-prompts repository root |
+| **Debug Files** | `debug_*.md`, `logs_*.md` | magento-ai-agent-prompts repository root |
 
-5. **Leverage stored information to avoid repeated checks:**
-   - **Magento Mode**: Use `MAGENTO_MODE` instead of running mode checks
-   - **Git Info**: Use `GIT_REPOSITORY` and `GIT_BRANCH` instead of running git commands
-   - **PHP Extensions**: Use `PHP_EXTENSIONS` instead of checking extensions repeatedly
-   - **User Preferences**: Use `PREFERRED_CODING_STANDARD` for code formatting
-   - **Project Settings**: Use `PREFERRED_MODULE_NAMESPACE` for new module creation
-   - **Tool Availability**: Use `DOCKER_AVAILABLE` to know if Docker commands are available
+**❌ FORBIDDEN Locations:**
+- Magento project root directory
+- Magento app/ directory
+- Magento var/ directory
+- Any Magento project subdirectories
+
+**✅ REQUIRED Location:**
+- magento-ai-agent-prompts repository root directory ONLY
+
+**Why This Matters:**
+- Keeps Magento project clean and uncluttered
+- Maintains separation between project code and AI support files
+- Ensures support files are version controlled with the repository
+- Prevents accidental commits of AI files to the Magento project
+- **Git Integration**: All these file types are automatically ignored by `.gitignore` to prevent accidental commits
 
 ---
 
@@ -115,7 +115,31 @@ For future tasks that need data persistence, AI tools should:
   - **Composer Path**: Ask human to provide the Composer executable path
 - **Only proceed with auto-detection if human explicitly cannot provide the paths**
 
-### Step 3: Environment Setup Options
+### Step 3: 🚨 MANDATORY - Version Validation
+**AI tools MUST validate PHP and Composer versions before proceeding:**
+
+**🚨 CRITICAL: Version Matching Requirements**
+- **If user provides specific version requirements**: PHP and Composer versions MUST match exactly
+- **If versions don't match**: STOP and ask user to provide correct versions
+- **If tools don't exist in terminal environment**: STOP and ask user to install/configure them
+- **NEVER continue with mismatched or missing versions**
+
+**Version Validation Process:**
+1. **Check if PHP exists at provided path**: `{php_path} --version`
+2. **Check if Composer exists at provided path**: `{composer_path} --version`
+3. **Extract actual versions** from command output
+4. **Compare with user requirements** (if provided)
+5. **If mismatch found**: STOP and request correct versions
+6. **If tools missing**: STOP and request installation/configuration
+
+**🚨 MANDATORY STOP Conditions:**
+- PHP executable not found at provided path
+- Composer executable not found at provided path
+- PHP version doesn't match user requirements
+- Composer version doesn't match user requirements
+- Any critical tool missing from terminal environment
+
+### Step 4: Environment Setup Options
 **AI tools MUST ALWAYS ask the human for PHP and Composer paths FIRST before any auto-detection:**
 
 **🚨 MANDATORY: Ask Human First**
@@ -137,14 +161,14 @@ For future tasks that need data persistence, AI tools should:
   - PHP path and version
   - Composer path and version
 
-### Step 3: Save Configuration (With User Consent)
+### Step 5: Save Configuration (With User Consent)
 **AI tools will save the configuration only after user consent:**
 - Save to `env.local.md` in the **magento-ai-agent-prompts repository root directory**
 - Include PHP and Composer paths/versions in structured markdown format
 - Add metadata and usage instructions
 - **Leave other environment fields as "Unknown" or "To be discovered"**
 
-### Step 4: Dynamic Environment Discovery During Tasks
+### Step 6: Dynamic Environment Discovery During Tasks
 **AI tools will discover and update environment information during task execution:**
 - **Magento Version**: Discover when running `php bin/magento --version`
 - **Magento Mode**: Discover when running `php bin/magento deploy:mode:show`
@@ -162,8 +186,11 @@ For future tasks that need data persistence, AI tools should:
 - [ ] **Human asked for Composer path** (MANDATORY - ask before auto-detection)
 - [ ] **PHP path obtained** (from human or auto-detection only if human cannot provide)
 - [ ] **Composer path obtained** (from human or auto-detection only if human cannot provide)
-- [ ] **PHP version discovered** from PHP path
-- [ ] **Composer version discovered** from Composer path
+- [ ] **🚨 PHP executable verified** at provided path
+- [ ] **🚨 Composer executable verified** at provided path
+- [ ] **🚨 PHP version extracted** and validated against requirements
+- [ ] **🚨 Composer version extracted** and validated against requirements
+- [ ] **🚨 Version mismatch resolved** (if any found)
 - [ ] **env.local.md created** with basic information
 - [ ] **User consent obtained** for saving configuration
 
@@ -176,14 +203,25 @@ For future tasks that need data persistence, AI tools should:
 - [ ] **env.local.md updated** with new discoveries
 
 ### Error Handling
-- [ ] **PHP path verified** to be accessible and working
-- [ ] **Composer path verified** to be accessible and working
+- [ ] **🚨 PHP executable exists** at provided path
+- [ ] **🚨 Composer executable exists** at provided path
+- [ ] **🚨 PHP version matches** user requirements (if specified)
+- [ ] **🚨 Composer version matches** user requirements (if specified)
+- [ ] **🚨 Version mismatches resolved** before proceeding
 - [ ] **Critical errors identified** and addressed
 - [ ] **Environment ready** for development tasks
 
 ---
 
 ## 🚫 Common Issues and Solutions
+
+### 🚨 Version Validation Issues
+**Problem**: PHP or Composer version doesn't match user requirements
+**Solution**: 
+- **STOP immediately** and inform user of version mismatch
+- **Ask user to provide correct version** or update their environment
+- **Provide specific commands** for version switching if possible
+- **NEVER proceed** with mismatched versions
 
 ### PHP Version Issues
 **Problem**: PHP version incompatible with Magento version
@@ -207,6 +245,14 @@ For future tasks that need data persistence, AI tools should:
 ### Multiple Environment Issues
 **Problem**: Multiple PHP/Composer installations causing confusion
 **Solution**: Ask user to specify which environment to use
+
+### 🚨 Missing Tool Issues
+**Problem**: PHP or Composer executable not found at provided path
+**Solution**: 
+- **STOP immediately** and inform user that tool is missing
+- **Ask user to install** the missing tool
+- **Provide installation instructions** for the missing tool
+- **NEVER proceed** without required tools
 
 ---
 
@@ -237,9 +283,13 @@ For future tasks that need data persistence, AI tools should:
 2. ✅ Human asked for Composer path (MANDATORY)
 3. ✅ PHP path obtained and verified
 4. ✅ Composer path obtained and verified
-5. ✅ Environment configuration saved
-6. ✅ User consent obtained
-7. ✅ Ready for dynamic discovery during tasks
+5. ✅ 🚨 PHP executable verified at provided path
+6. ✅ 🚨 Composer executable verified at provided path
+7. ✅ 🚨 PHP version validated against requirements
+8. ✅ 🚨 Composer version validated against requirements
+9. ✅ Environment configuration saved
+10. ✅ User consent obtained
+11. ✅ Ready for dynamic discovery during tasks
 
 ### Environment Status
 ✅ **Ready for development tasks - will discover additional environment details as needed**
@@ -272,6 +322,108 @@ I found multiple development environments on your system that need clarification
 4. Are you using any containerization (Docker, etc.) for this project?
 
 Please provide the correct environment details so I can proceed with the proper setup.
+```
+
+### 🚨 Version Validation Failure Response
+```
+[FRESH_REPO] ✅ Confirmed: Repository freshly cloned/fetched
+[FOLLOW_INSTRUCTION] ✅ Confirmed: I have read and understood all instructions in this repository
+[SYSTEMATIC_APPROACH] ✅ Confirmed: I will use the systematic approach from the magento folder
+[TASK_EXECUTION] ❌ STOPPED: Version validation failed
+
+## 🚨 CRITICAL: Version Validation Failed
+
+### Issue Detected
+**{Tool Name} Version Mismatch:**
+- **Required Version**: {user_required_version}
+- **Actual Version**: {actual_version}
+- **Path**: {tool_path}
+
+### 🚨 MANDATORY: Action Required
+**I cannot proceed with the current environment setup because:**
+
+1. **Version Mismatch**: The {tool_name} version at `{tool_path}` doesn't match your requirements
+2. **Critical for Magento**: {tool_name} version is critical for Magento development
+3. **Potential Issues**: Using wrong version may cause compatibility problems
+
+### Required Actions
+**Please provide one of the following:**
+
+**Option 1: Update Environment**
+- Switch to the correct {tool_name} version
+- Provide the correct path to the matching version
+- Confirm the version is now correct
+
+**Option 2: Provide Alternative Path**
+- Give me the path to the correct {tool_name} version
+- Ensure the version matches your requirements
+- Verify the path is accessible
+
+**Option 3: Update Requirements**
+- If the current version is acceptable, update your requirements
+- Confirm you want to proceed with version {actual_version}
+
+### Next Steps
+Once you provide the correct {tool_name} version/path, I will:
+1. ✅ Validate the new version
+2. ✅ Confirm it matches requirements
+3. ✅ Proceed with environment setup
+4. ✅ Save configuration for future use
+
+**🚨 I cannot continue until this version issue is resolved.**
+```
+
+### 🚨 Missing Tool Response
+```
+[FRESH_REPO] ✅ Confirmed: Repository freshly cloned/fetched
+[FOLLOW_INSTRUCTION] ✅ Confirmed: I have read and understood all instructions in this repository
+[SYSTEMATIC_APPROACH] ✅ Confirmed: I will use the systematic approach from the magento folder
+[TASK_EXECUTION] ❌ STOPPED: Required tool missing
+
+## 🚨 CRITICAL: Required Tool Missing
+
+### Issue Detected
+**{Tool Name} Not Found:**
+- **Expected Path**: {provided_path}
+- **Error**: Executable not found at specified location
+- **Impact**: Cannot proceed with Magento development
+
+### 🚨 MANDATORY: Action Required
+**I cannot proceed because {tool_name} is missing from your environment:**
+
+1. **Tool Required**: {tool_name} is essential for Magento development
+2. **Path Invalid**: The provided path `{provided_path}` doesn't contain {tool_name}
+3. **Installation Needed**: {tool_name} needs to be installed or configured
+
+### Required Actions
+**Please provide one of the following:**
+
+**Option 1: Install {Tool Name}**
+- Install {tool_name} on your system
+- Provide the correct installation path
+- Confirm the installation is complete
+
+**Option 2: Provide Correct Path**
+- Give me the correct path to your {tool_name} installation
+- Ensure the path is accessible and working
+- Verify the tool is properly installed
+
+**Option 3: Installation Instructions**
+- If you need help installing {tool_name}, I can provide instructions
+- Follow the installation steps
+- Provide the new path once installed
+
+### Installation Instructions for {Tool Name}
+**{Tool-specific installation steps}**
+
+### Next Steps
+Once you provide the correct {tool_name} path, I will:
+1. ✅ Verify the tool exists at the path
+2. ✅ Check the version compatibility
+3. ✅ Proceed with environment setup
+4. ✅ Save configuration for future use
+
+**🚨 I cannot continue until {tool_name} is properly installed and accessible.**
 ```
 
 ---

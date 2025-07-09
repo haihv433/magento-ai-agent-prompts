@@ -1,1 +1,68 @@
+# AI-Created Support Files - DO NOT COMMIT
+# These files are created by AI tools for task support and should remain local
+
+# Local Storage Files
 *.local.md
+
+# Testing Files
+test_*.md
+testing_*.md
+*_test.md
+*_tests.md
+
+# Bash Scripts
+*.sh
+*.bash
+*_script.sh
+*_script.bash
+
+# Documentation Files (AI-created only)
+docs_*.md
+notes_*.md
+*_docs.md
+*_notes.md
+
+# Configuration Files (AI-created only)
+config_*.md
+setup_*.md
+*_config.md
+*_setup.md
+
+# Debug Files
+debug_*.md
+logs_*.md
+*_debug.md
+*_logs.md
+
+# Additional AI Support Files
+ai_*.md
+temp_*.md
+tmp_*.md
+*_temp.md
+*_tmp.md
+
+# Task-specific files
+task_*.md
+*_task.md
+session_*.md
+*_session.md
+
+# Analysis and research files
+analysis_*.md
+research_*.md
+*_analysis.md
+*_research.md
+
+# Backup and archive files
+backup_*.md
+archive_*.md
+*_backup.md
+*_archive.md
+
+# IMPORTANT: Repository core files are NOT ignored
+# - readme.md (repository documentation)
+# - contributing_guidelines.md (contribution guidelines)
+# - ai_instructions/*.md (AI instruction files)
+# - magento/*.md (Magento reference files)
+# - prompts/*.md (task prompt files)
+# - human_resources/*.md (human resource files)

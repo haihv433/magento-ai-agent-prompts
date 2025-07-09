@@ -5,6 +5,41 @@
 
 ---
 
+## 🚨 MANDATORY: File Location Requirements
+
+### **CRITICAL: ALL AI-Created Support Files MUST Be Created in This Repository**
+
+**🚨 NEVER create support files in the Magento project root directory!**
+
+**✅ ALWAYS create ALL support files in the magento-ai-agent-prompts repository root:**
+
+| File Type | Examples | Location |
+|-----------|----------|----------|
+| **Local Storage Files** | `.local.md`, `.md` | magento-ai-agent-prompts repository root |
+| **Testing Files** | `test_*.md`, `testing_*.md` | magento-ai-agent-prompts repository root |
+| **Bash Scripts** | `*.sh`, `*.bash` | magento-ai-agent-prompts repository root |
+| **Documentation** | `docs_*.md`, `notes_*.md` | magento-ai-agent-prompts repository root |
+| **Configuration** | `config_*.md`, `setup_*.md` | magento-ai-agent-prompts repository root |
+| **Debug Files** | `debug_*.md`, `logs_*.md` | magento-ai-agent-prompts repository root |
+
+**❌ FORBIDDEN Locations:**
+- Magento project root directory
+- Magento app/ directory
+- Magento var/ directory
+- Any Magento project subdirectories
+
+**✅ REQUIRED Location:**
+- magento-ai-agent-prompts repository root directory ONLY
+
+**Why This Matters:**
+- Keeps Magento project clean and uncluttered
+- Maintains separation between project code and AI support files
+- Ensures support files are version controlled with the repository
+- Prevents accidental commits of AI files to the Magento project
+- **Git Integration**: All these file types are automatically ignored by `.gitignore` to prevent accidental commits
+
+---
+
 ## 📋 Purpose
 This file establishes the structure and format for AI tools to create task-specific local storage files (`.local.md`) that capture all relevant information, progress, and insights during task execution. This creates a valuable knowledge base for future tasks and ensures no important information is lost.
 
@@ -250,6 +285,25 @@ This file establishes the structure and format for AI tools to create task-speci
 
 ### **Lessons Learned**
 {What was learned from this task}
+
+---
+
+## 📋 Human-Readable Task Summary
+
+### **What Was Done**
+{Brief description of the main work accomplished in simple terms}
+
+### **How to Test**
+{Simple steps to verify the work is working correctly}
+
+### **Regression Testing**
+{What to check to ensure nothing else was broken}
+
+### **Files Modified**
+{List of key files that were changed}
+
+### **Next Steps**
+{Any follow-up actions needed or recommendations}
 
 ---
 

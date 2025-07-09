@@ -5,6 +5,41 @@
 
 ---
 
+## 🚨 MANDATORY: File Location Requirements
+
+### **CRITICAL: ALL AI-Created Support Files MUST Be Created in This Repository**
+
+**🚨 NEVER create support files in the Magento project root directory!**
+
+**✅ ALWAYS create ALL support files in the magento-ai-agent-prompts repository root:**
+
+| File Type | Examples | Location |
+|-----------|----------|----------|
+| **Local Storage Files** | `.local.md`, `.md` | magento-ai-agent-prompts repository root |
+| **Testing Files** | `test_*.md`, `testing_*.md` | magento-ai-agent-prompts repository root |
+| **Bash Scripts** | `*.sh`, `*.bash` | magento-ai-agent-prompts repository root |
+| **Documentation** | `docs_*.md`, `notes_*.md` | magento-ai-agent-prompts repository root |
+| **Configuration** | `config_*.md`, `setup_*.md` | magento-ai-agent-prompts repository root |
+| **Debug Files** | `debug_*.md`, `logs_*.md` | magento-ai-agent-prompts repository root |
+
+**❌ FORBIDDEN Locations:**
+- Magento project root directory
+- Magento app/ directory
+- Magento var/ directory
+- Any Magento project subdirectories
+
+**✅ REQUIRED Location:**
+- magento-ai-agent-prompts repository root directory ONLY
+
+**Why This Matters:**
+- Keeps Magento project clean and uncluttered
+- Maintains separation between project code and AI support files
+- Ensures support files are version controlled with the repository
+- Prevents accidental commits of AI files to the Magento project
+- **Git Integration**: All these file types are automatically ignored by `.gitignore` to prevent accidental commits
+
+---
+
 ## 📋 Purpose
 This file provides the workflow and management instructions for AI tools to effectively use the task local storage system. It covers the step-by-step process, file management, information retrieval, and best practices for maintaining task knowledge.
 
@@ -31,6 +66,41 @@ This file provides the workflow and management instructions for AI tools to effe
 3. **Document validation results** and testing performed
 4. **Add future considerations** and maintenance notes
 5. **Link to related tasks** and files
+
+### **Step 4: 🚨 MANDATORY - Human-Readable Task Summary**
+**AI tools MUST provide a concise, human-readable summary at the end of each task:**
+
+#### **🚨 CRITICAL: Human-to-Human Summary Requirements**
+- **Short and concise** - Maximum 1-2 paragraphs
+- **Simple language** - Avoid technical jargon
+- **Clear outcomes** - What was accomplished
+- **Testing instructions** - How to verify the work
+- **Regression testing** - What to check for potential issues
+- **Reporting ready** - Suitable for human-to-human communication
+
+#### **Summary Structure:**
+```
+## 📋 Task Summary (Human-Readable)
+
+### What Was Done
+[Brief description of the main work accomplished]
+
+### How to Test
+[Simple steps to verify the work is working correctly]
+
+### Regression Testing
+[What to check to ensure nothing else was broken]
+
+### Files Modified
+[List of key files that were changed]
+```
+
+#### **Summary Guidelines:**
+- **Use simple language** - Explain as if talking to a colleague
+- **Focus on outcomes** - What the user can now do
+- **Provide clear testing steps** - How to verify everything works
+- **Include regression checks** - What might have been affected
+- **Keep it brief** - No more than 2-3 sentences per section
 
 ---
 
@@ -85,6 +155,7 @@ AI tools should search for:
 
 **For each task, ensure:**
 
+- [ ] **🚨 File location correct** - ALL support files created in magento-ai-agent-prompts repository root (NOT in Magento project)
 - [ ] **Task file created** with proper naming convention (snake_case lowercase)
 - [ ] **Existing files scanned** for relevant information
 - [ ] **Environment config loaded** from project file
@@ -94,6 +165,7 @@ AI tools should search for:
 - [ ] **Issues and solutions recorded** for reference
 - [ ] **File updated** at task completion
 - [ ] **Related tasks linked** for continuity
+- [ ] **🚨 Human-readable summary provided** at task completion
 - [ ] **Contributing guidelines followed** (naming, size, links, format)
 
 ---
@@ -101,6 +173,7 @@ AI tools should search for:
 ## 🚫 Common Mistakes to Avoid
 
 ### **Don't:**
+- ❌ **🚨 Create support files in Magento project root** (FORBIDDEN)
 - ❌ **Skip file creation** for "simple" tasks
 - ❌ **Forget to update** progress during execution
 - ❌ **Ignore existing files** when starting new tasks
@@ -108,6 +181,7 @@ AI tools should search for:
 - ❌ **Use generic names** that don't describe the task
 
 ### **Do:**
+- ✅ **🚨 ALWAYS create ALL support files in magento-ai-agent-prompts repository root** (REQUIRED)
 - ✅ **Always create a task file** before starting work
 - ✅ **Update continuously** as work progresses
 - ✅ **Search existing files** for relevant information
@@ -116,6 +190,7 @@ AI tools should search for:
 - ✅ **Follow contributing guidelines** for naming and formatting
 - ✅ **Keep files under 200 lines** (split if needed)
 - ✅ **Use clickable links** when referencing other files
+- ✅ **🚨 ALWAYS provide human-readable summary** at task completion
 
 ---
 
@@ -159,6 +234,30 @@ AI tools should search for:
 - **Knowledge Preservation**: All insights will be captured
 - **Progress Tracking**: Real-time updates during execution
 - **Future Reference**: Reusable for similar tasks
+```
+
+### Human-Readable Task Summary Response
+```
+[TASK_COMPLETE] ✅ Confirmed: Task completed successfully
+[SUMMARY] ✅ Confirmed: Human-readable summary provided
+[TESTING] ✅ Confirmed: Testing instructions included
+
+## 📋 Task Summary (Human-Readable)
+
+### What Was Done
+[Brief description of the main work accomplished in simple terms]
+
+### How to Test
+[Simple steps to verify the work is working correctly]
+
+### Regression Testing
+[What to check to ensure nothing else was broken]
+
+### Files Modified
+[List of key files that were changed]
+
+### Next Steps
+[Any follow-up actions needed or recommendations]
 ```
 
 ---
