@@ -186,6 +186,8 @@ Before proposing any fix, verify:
 
 ## 🔗 Related Files
 
+- **[`entity_attribute_patterns.md`](./entity_attribute_patterns.md)** - Entity attribute access patterns
 - **[`patterns_implementation.md`](./patterns_implementation.md)** - Implementation Workflows and Tools
-- **[`terminology.md`](./terminology.md)** - Magento terms and concepts
+- **[`terminology_core.md`](./terminology_core.md)** - Core Magento terms and concepts
+- **[`terminology_advanced.md`](./terminology_advanced.md)** - Advanced Magento concepts
 - **[`scope_and_structure.md`](./scope_and_structure.md)** - Project structure and work scope 

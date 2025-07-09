@@ -194,8 +194,10 @@ public function beforeApplyRules(
 
 ## 🔗 Related Files
 
+- **[`entity_attribute_patterns.md`](./entity_attribute_patterns.md)** - Entity attribute access patterns
 - **[`patterns_overview.md`](./patterns_overview.md)** - Core Approach and Scenarios
-- **[`terminology.md`](./terminology.md)** - Magento terms and concepts
+- **[`terminology_core.md`](./terminology_core.md)** - Core Magento terms and concepts
+- **[`terminology_advanced.md`](./terminology_advanced.md)** - Advanced Magento concepts
 - **[`scope_and_structure.md`](./scope_and_structure.md)** - Project structure and work scope
 
 ---
