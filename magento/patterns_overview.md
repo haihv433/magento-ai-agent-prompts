@@ -1,7 +1,7 @@
 # 🏗️ AI Agent Guide: Magento Reference Code Checking Protocol
 
 ## 🎯 Purpose
-This guide is for AI agents to systematically check reference code in `vendor/magento/` before proposing any fixes or modifications to Magento modules. This ensures compatibility and prevents breaking changes.
+This guide is for AI agents to systematically check reference code in multiple locations (`vendor/magento/`, `app/code/`, `dev/`, etc.) before proposing any fixes or modifications to Magento modules. This ensures compatibility and prevents breaking changes.
 
 ## 🚨 Core Principle
 **ALWAYS check the reference code first before making any assumptions about method signatures, class structures, or behavior.**
@@ -17,19 +17,15 @@ When a user reports an issue or requests a fix:
 2. **Identify the specific method** that needs modification
 3. **Note the namespace** and class name
 
-### Step 2: Find Reference Code in vendor/magento/
-Use these search patterns:
+### Step 2: Find Reference Code in Multiple Locations
+Search for reference code in all possible locations where Magento classes can exist:
 
-```bash
-# Search for the exact class in vendor/magento/
-find vendor/magento/ -name "*.php" -exec grep -l "class.*TargetClassName" {} \;
+- **Core Magento modules**: `vendor/magento/`
+- **Custom modules**: `app/code/`
+- **Development modules**: `dev/`
+- **Other possible locations**: Any directory containing Magento modules
 
-# Search for method signatures
-grep -r "public function.*methodName" vendor/magento/module-* --include="*.php"
-
-# Search for interface definitions
-find vendor/magento/ -name "*.php" -exec grep -l "interface.*InterfaceName" {} \;
-```
+**AI tools should use their preferred search methods** to locate the target class, method, or interface across these directories.
 
 ### Step 3: Analyze Reference Code
 For each found reference:
@@ -65,19 +61,16 @@ Based on the reference code analysis:
 **Problem**: Plugin method signature doesn't match target method
 
 **Workflow**:
-1. Find the target class in `vendor/magento/`
+1. Find the target class in all possible locations (`vendor/magento/`, `app/code/`, `dev/`)
 2. Read the actual method signature
 3. Update plugin to match exactly
 
 **Example**:
-```bash
-# Find the actual method in vendor
-grep -r "public function applyRules" vendor/magento/module-sales-rule/ --include="*.php"
-```
+**AI tools should search for the target method** across all possible locations where Magento classes exist.
 
 **Reference Code**:
 ```php
-// vendor/magento/module-sales-rule/Model/RulesApplier.php
+// Found in: vendor/magento/module-sales-rule/Model/RulesApplier.php (or app/code/Vendor/Module/...)
 public function applyRules($item, $rules, $skipValidation, array $couponCodes = [])
 ```
 
@@ -99,61 +92,37 @@ public function beforeApplyRules(
 **Problem**: Interface method signature mismatch
 
 **Workflow**:
-1. Find the interface in `vendor/magento/`
+1. Find the interface in all possible locations (`vendor/magento/`, `app/code/`, `dev/`)
 2. Check the exact method signature
 3. Update implementation to match
 
 **Example**:
-```bash
-# Find interface definition
-find vendor/magento/ -name "*.php" -exec grep -l "interface.*RepositoryInterface" {} \;
-```
+**AI tools should search for the interface definition** across all possible locations where Magento classes exist.
 
 ### Scenario 3: Class Extension Issues
 
 **Problem**: Extended class has different method signatures
 
 **Workflow**:
-1. Find the parent class in `vendor/magento/`
+1. Find the parent class in all possible locations (`vendor/magento/`, `app/code/`, `dev/`)
 2. Check all overridden methods
 3. Ensure compatibility
 
 **Example**:
-```bash
-# Find parent class
-find vendor/magento/ -name "*.php" -exec grep -l "class.*ParentClassName" {} \;
-```
+**AI tools should search for the parent class** across all possible locations where Magento classes exist.
 
 ---
 
-## 🔍 Reference Code Search Patterns
+## 🔍 Reference Code Search Principles
 
 ### For Classes
-```bash
-# Find class definition
-grep -r "class.*ClassName" vendor/magento/module-* --include="*.php"
-
-# Find class with namespace
-grep -r "namespace.*ModuleName" vendor/magento/module-* --include="*.php" | grep "class.*ClassName"
-```
+**AI tools should search for class definitions** across all possible locations where Magento classes exist.
 
 ### For Methods
-```bash
-# Find method signature
-grep -r "public function.*methodName" vendor/magento/module-* --include="*.php"
-
-# Find method with parameters
-grep -r "public function.*methodName.*(" vendor/magento/module-* --include="*.php"
-```
+**AI tools should search for method signatures** across all possible locations where Magento classes exist.
 
 ### For Interfaces
-```bash
-# Find interface definition
-grep -r "interface.*InterfaceName" vendor/magento/module-* --include="*.php"
-
-# Find interface methods
-grep -r "function.*methodName" vendor/magento/module-* --include="*.php" | grep "interface"
-```
+**AI tools should search for interface definitions** across all possible locations where Magento classes exist.
 
 ---
 
@@ -186,7 +155,7 @@ vendor/magento/module-name/
 
 Before proposing any fix, verify:
 
-- [ ] **Reference code found** in vendor/magento/
+- [ ] **Reference code found** in all possible locations (vendor/magento/, app/code/, dev/)
 - [ ] **Method signature matches** exactly
 - [ ] **Parameter types are correct**
 - [ ] **Return types match**
@@ -208,7 +177,7 @@ Before proposing any fix, verify:
 
 ### Red Flags
 
-- Method signature doesn't match any found in vendor/magento/
+- Method signature doesn't match any found in all locations (vendor/magento/, app/code/, dev/)
 - Parameter types don't align with reference code
 - Missing required parameters
 - Wrong interface implementation

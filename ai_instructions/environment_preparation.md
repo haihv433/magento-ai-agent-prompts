@@ -53,10 +53,12 @@ This file instructs AI tools to efficiently prepare the Magento development envi
 **Local Storage File Pattern (`.local.md`):**
 - **File Type**: Local Storage File (`.local.md`) - Standard pattern for AI agent data persistence
 - **Location**: `env.local.md` in the **magento-ai-agent-prompts repository root directory** (NOT in the Magento project directory)
-- **Naming**: Simple and intuitive naming for environment configuration
+- **Naming**: Use snake_case lowercase naming (e.g., `env.local.md`, `task_name.local.md`)
 - **Format**: Proper Markdown with tables, sections, and metadata for easy reading and parsing
 - **Scope**: Environment configuration that persists across AI tool sessions
 - **Purpose**: Store environment data that AI tools need to remember between sessions
+- **Size Limit**: Must be under 200 lines (split if needed)
+- **Link Formatting**: Use clickable links when referencing other files
 
 **Standard `.local.md` Structure:**
 1. **Header**: File type, purpose, generation date, project info
@@ -79,16 +81,20 @@ AI tools should update the configuration file when they discover new information
 **Extending the `.local.md` Pattern:**
 For future tasks that need data persistence, AI tools should:
 1. **Create new `.local.md` files** following the same structure and format
-2. **Use descriptive names** like `{task-name}.local.md` or `{category}-{task-name}.local.md`
+2. **Use snake_case lowercase names** like `{task_name}.local.md` or `{category}_{task_name}.local.md`
 3. **Follow the standard format** with headers, tables, metadata, and usage instructions
 4. **Store in the magento-ai-agent-prompts repository root directory** for easy access
 5. **Include clear documentation** about what the file contains and how to use it
+6. **Keep files under 200 lines** (split if needed)
+7. **Use clickable links** when referencing other files or folders
 
 **Examples of Additional `.local.md` Files:**
 - `modules.local.md` - Track created modules and their configurations
 - `debugging.local.md` - Store debugging history and solutions
 - `customizations.local.md` - Track custom code and modifications
 - `testing.local.md` - Store test configurations and results
+- `api_integrations.local.md` - Store API integration configurations
+- `performance_optimizations.local.md` - Track performance improvements
 
 ---
 
@@ -101,17 +107,31 @@ For future tasks that need data persistence, AI tools should:
 - Use stored environment information for all operations
 - Skip environment setup if configuration is complete and valid
 
-### Step 2: Environment Setup Options
-**AI tools will offer two options for environment setup:**
+### Step 2: 🚨 MANDATORY - Ask Human for Environment Paths
+**AI tools MUST ALWAYS ask the human for PHP and Composer paths FIRST:**
+- **NEVER attempt auto-detection without asking the human first**
+- **ALWAYS request these two critical pieces of information:**
+  - **PHP Path**: Ask human to provide the PHP executable path
+  - **Composer Path**: Ask human to provide the Composer executable path
+- **Only proceed with auto-detection if human explicitly cannot provide the paths**
 
-**Option 1: Manual Configuration (Recommended)**
-- User provides the two critical environment details directly for maximum accuracy
-- **Request ONLY these two essential pieces:**
+### Step 3: Environment Setup Options
+**AI tools MUST ALWAYS ask the human for PHP and Composer paths FIRST before any auto-detection:**
+
+**🚨 MANDATORY: Ask Human First**
+- **ALWAYS ask the human to provide PHP and Composer paths before attempting any auto-detection**
+- **Request these two essential pieces from the human:**
   - **PHP Path**: [e.g., /usr/bin/php, /opt/homebrew/bin/php] (will reveal PHP version)
   - **Composer Path**: [e.g., /usr/local/bin/composer, /opt/homebrew/bin/composer] (will reveal Composer version)
 
-**Option 2: Auto-Detection**
-- AI attempts to detect PHP and Composer paths automatically
+**Option 1: Manual Configuration (Recommended)**
+- Human provides the two critical environment details directly for maximum accuracy
+- **Use the paths provided by the human**
+- **Verify the paths work correctly**
+
+**Option 2: Auto-Detection (Only if human cannot provide paths)**
+- **ONLY attempt auto-detection if the human explicitly cannot provide the paths**
+- **ALWAYS ask first - never auto-detect without asking**
 - May not be 100% accurate but provides a starting point
 - **Focus only on detecting:**
   - PHP path and version
@@ -138,8 +158,10 @@ For future tasks that need data persistence, AI tools should:
 ## ✅ Mandatory Validation Checklist
 
 ### Initial Setup (Focus on Critical Paths)
-- [ ] **PHP path obtained** (manual or auto-detection)
-- [ ] **Composer path obtained** (manual or auto-detection)
+- [ ] **Human asked for PHP path** (MANDATORY - ask before auto-detection)
+- [ ] **Human asked for Composer path** (MANDATORY - ask before auto-detection)
+- [ ] **PHP path obtained** (from human or auto-detection only if human cannot provide)
+- [ ] **Composer path obtained** (from human or auto-detection only if human cannot provide)
 - [ ] **PHP version discovered** from PHP path
 - [ ] **Composer version discovered** from Composer path
 - [ ] **env.local.md created** with basic information
@@ -200,8 +222,8 @@ For future tasks that need data persistence, AI tools should:
 ## 🔧 Environment Preparation Complete
 
 ### Critical Environment Information
-- **PHP Path**: [path] (Version: [X.X.X])
-- **Composer Path**: [path] (Version: [X.X.X])
+- **PHP Path**: [path] (Version: [X.X.X]) - Obtained from human
+- **Composer Path**: [path] (Version: [X.X.X]) - Obtained from human
 - **Configuration Saved**: ✅ `env.local.md` created in magento-ai-agent-prompts repository root
 
 ### Dynamic Discovery Ready
@@ -211,11 +233,13 @@ For future tasks that need data persistence, AI tools should:
 - **Other Tools**: Will discover as needed during tasks
 
 ### Preparation Steps Completed
-1. ✅ PHP path obtained and verified
-2. ✅ Composer path obtained and verified
-3. ✅ Environment configuration saved
-4. ✅ User consent obtained
-5. ✅ Ready for dynamic discovery during tasks
+1. ✅ Human asked for PHP path (MANDATORY)
+2. ✅ Human asked for Composer path (MANDATORY)
+3. ✅ PHP path obtained and verified
+4. ✅ Composer path obtained and verified
+5. ✅ Environment configuration saved
+6. ✅ User consent obtained
+7. ✅ Ready for dynamic discovery during tasks
 
 ### Environment Status
 ✅ **Ready for development tasks - will discover additional environment details as needed**

@@ -22,13 +22,19 @@ This file establishes the structure and format for AI tools to create task-speci
 ### **File Naming Convention**
 ```
 {question}.{date-time}.local.md
-
-Examples:
-- "fix-checkout-errors.2024-01-15-14-30.local.md"
-- "create-custom-module.2024-01-15-09-15.local.md"
-- "optimize-performance.2024-01-14-16-45.local.md"
-- "debug-payment-issue.2024-01-14-11-20.local.md"
 ```
+
+**Naming Requirements (Following Contributing Guidelines):**
+- **Use snake_case lowercase** for question names
+- **Use descriptive but concise** names
+- **Include date-time stamp** for uniqueness
+- **Keep total filename length** reasonable
+
+**Examples:**
+- "fix_checkout_errors.2024-01-15-14-30.local.md"
+- "create_custom_module.2024-01-15-09-15.local.md"
+- "optimize_performance.2024-01-14-16-45.local.md"
+- "debug_payment_issue.2024-01-14-11-20.local.md"
 
 ### **File Structure Template**
 ```markdown
@@ -39,7 +45,8 @@ Examples:
 > **Created**: {date-time}  
 > **Status**: {In Progress/Completed/Failed/Paused}  
 > **Project**: {project-name}  
-> **AI Session**: {session identifier}
+> **AI Session**: {session identifier}  
+> **Guidelines**: Following [`contributing_guidelines.md`](../contributing_guidelines.md)
 
 ---
 
@@ -213,6 +220,23 @@ Examples:
 - **Dependencies**: [Tasks that depend on this]
 - **Prerequisites**: [Tasks needed before this]
 - **Follow-up**: [Tasks that should follow this]
+
+---
+
+## 📋 Contributing Guidelines Compliance
+
+### **File Standards**
+- ✅ **Naming Convention**: Using snake_case lowercase
+- ✅ **File Size**: Under 200 lines (split if needed)
+- ✅ **Link Formatting**: Using clickable links for references
+- ✅ **Content Organization**: Clear sections with emojis
+- ✅ **Cross-references**: Linking to related files
+
+### **Quality Standards**
+- ✅ **Accuracy**: All information is accurate and up-to-date
+- ✅ **Completeness**: Covering all necessary aspects
+- ✅ **Clarity**: Using clear, concise language
+- ✅ **Consistency**: Following established patterns
 
 ---
 

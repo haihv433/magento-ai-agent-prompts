@@ -50,10 +50,11 @@ magento-ai-agent-prompts/
 ```
 
 ### **File Naming Guidelines**
-- **Use descriptive names**: `fix-checkout-errors` not `fix`
+- **Use snake_case lowercase**: `fix_checkout_errors` not `fix-checkout-errors`
 - **Include date-time**: `2024-01-15-14-30` format
-- **Use hyphens**: Separate words with hyphens
+- **Use underscores**: Separate words with underscores (following contributing guidelines)
 - **Keep it concise**: But descriptive enough to understand
+- **Follow contributing guidelines**: Use [`contributing_guidelines.md`](./contributing_guidelines.md) standards
 
 ### **File Maintenance**
 - **Archive old files**: Move completed tasks to archive folder
@@ -84,7 +85,7 @@ AI tools should search for:
 
 **For each task, ensure:**
 
-- [ ] **Task file created** with proper naming convention
+- [ ] **Task file created** with proper naming convention (snake_case lowercase)
 - [ ] **Existing files scanned** for relevant information
 - [ ] **Environment config loaded** from project file
 - [ ] **Progress tracked** continuously throughout task
@@ -93,6 +94,7 @@ AI tools should search for:
 - [ ] **Issues and solutions recorded** for reference
 - [ ] **File updated** at task completion
 - [ ] **Related tasks linked** for continuity
+- [ ] **Contributing guidelines followed** (naming, size, links, format)
 
 ---
 
@@ -111,6 +113,9 @@ AI tools should search for:
 - ✅ **Search existing files** for relevant information
 - ✅ **Capture insights immediately** when discovered
 - ✅ **Use descriptive file names** for easy identification
+- ✅ **Follow contributing guidelines** for naming and formatting
+- ✅ **Keep files under 200 lines** (split if needed)
+- ✅ **Use clickable links** when referencing other files
 
 ---
 
@@ -164,7 +169,25 @@ AI tools should search for:
 - **[`environment_preparation.md`](./environment_preparation.md)** - Environment setup and configuration
 - **[`requirement_clarification.md`](./requirement_clarification.md)** - Requirement clarification process
 - **[`response_format.md`](./response_format.md)** - Response labeling requirements
+- **[`contributing_guidelines.md`](./contributing_guidelines.md)** - File naming and formatting standards
 
 ---
 
-**Remember**: Every task creates valuable knowledge. Capture it systematically for future use! 
+## 📋 Contributing Guidelines Compliance
+
+### **Local Storage File Standards**
+- ✅ **Naming Convention**: Use snake_case lowercase (e.g., `fix_checkout_errors.local.md`)
+- ✅ **File Size**: Keep under 200 lines (split large files if needed)
+- ✅ **Link Formatting**: Use clickable links when referencing other files
+- ✅ **Content Organization**: Use clear sections with emojis
+- ✅ **Cross-references**: Link to related files and folders
+
+### **Quality Standards**
+- ✅ **Accuracy**: All information must be accurate and up-to-date
+- ✅ **Completeness**: Cover all necessary aspects of the task
+- ✅ **Clarity**: Use clear, concise language
+- ✅ **Consistency**: Follow established patterns and conventions
+
+---
+
+**Remember**: Every task creates valuable knowledge. Capture it systematically for future use while following the contributing guidelines! 

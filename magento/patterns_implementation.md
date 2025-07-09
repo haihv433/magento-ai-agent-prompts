@@ -6,7 +6,7 @@
 ---
 
 ## 📋 Purpose
-This file provides detailed implementation workflows, tools, and examples for AI agents to effectively check and match Magento reference code. It includes practical commands, example workflows, and documentation standards.
+This file provides universal principles and workflows for AI agents to effectively check and match Magento reference code. It includes conceptual approaches, example workflows, and documentation standards that AI tools can adapt to their preferred implementation methods.
 
 ---
 
@@ -17,29 +17,28 @@ This file provides detailed implementation workflows, tools, and examples for AI
 **User Issue**: "Plugin method signature doesn't match"
 
 **AI Agent Steps**:
-1. Find target class in vendor/magento/
+1. Find target class in all possible locations (vendor/magento/, app/code/, dev/)
 2. Read actual method signature
 3. Compare with user's plugin
 4. Propose exact match fix
 
 **Example**:
-```bash
-# Step 1: Find the method
-grep -r "public function applyRules" vendor/magento/module-sales-rule/ --include="*.php"
+**Step 1**: AI tools should search for the target method across all possible locations where Magento classes exist.
 
-# Step 2: Read the actual signature
-# vendor/magento/module-sales-rule/Model/RulesApplier.php:110
+**Step 2**: Read the actual signature from the found reference code.
+```php
+// Found in: vendor/magento/module-sales-rule/Model/RulesApplier.php (or app/code/Vendor/Module/...)
 public function applyRules($item, $rules, $skipValidation, array $couponCodes = [])
-
-# Step 3: Fix plugin to match exactly
 ```
+
+**Step 3**: Fix plugin to match the reference signature exactly.
 
 ### Workflow 2: Interface Implementation
 
 **User Issue**: "Interface method not implemented correctly"
 
 **AI Agent Steps**:
-1. Find interface in vendor/magento/
+1. Find interface in all possible locations (vendor/magento/, app/code/, dev/)
 2. Read all required methods
 3. Check implementation completeness
 4. Propose missing methods
@@ -49,53 +48,33 @@ public function applyRules($item, $rules, $skipValidation, array $couponCodes = 
 **User Issue**: "Extended class has compatibility issues"
 
 **AI Agent Steps**:
-1. Find parent class in vendor/magento/
+1. Find parent class in all possible locations (vendor/magento/, app/code/, dev/)
 2. Check all overridden methods
 3. Verify method signatures
 4. Propose compatible overrides
 
 ---
 
-## 🛠️ Tools and Commands
+## 🛠️ Universal Search Principles
 
-### Essential Search Commands
-```bash
-# Find class definitions
-find vendor/magento/ -name "*.php" -exec grep -l "class.*ClassName" {} \;
+### Essential Search Principles
+**AI tools should search for:**
+- **Class definitions** across all possible locations where Magento classes exist
+- **Method signatures** across all possible locations where Magento classes exist
+- **Interface definitions** across all possible locations where Magento classes exist
+- **Specific modules** across all possible locations where Magento classes exist
 
-# Find method signatures
-grep -r "public function.*methodName" vendor/magento/module-* --include="*.php"
+### File Reading Principles
+**AI tools should be able to:**
+- **Read specific files** to examine class implementations
+- **Read specific lines** to focus on relevant code sections
+- **Find methods within files** to locate specific functionality
 
-# Find interface definitions
-find vendor/magento/ -name "*.php" -exec grep -l "interface.*InterfaceName" {} \;
-
-# Search in specific module
-grep -r "searchTerm" vendor/magento/module-specific-name/ --include="*.php"
-```
-
-### File Reading Commands
-```bash
-# Read specific file
-cat vendor/magento/module-name/Model/ClassName.php
-
-# Read specific lines
-sed -n '100,120p' vendor/magento/module-name/Model/ClassName.php
-
-# Find method in file
-grep -n "public function" vendor/magento/module-name/Model/ClassName.php
-```
-
-### Advanced Search Patterns
-```bash
-# Find methods with specific parameter types
-grep -r "public function.*methodName.*string.*" vendor/magento/module-* --include="*.php"
-
-# Find methods with array parameters
-grep -r "public function.*methodName.*array.*" vendor/magento/module-* --include="*.php"
-
-# Find methods with return types
-grep -r "public function.*methodName.*:.*" vendor/magento/module-* --include="*.php"
-```
+### Advanced Search Principles
+**AI tools should search for:**
+- **Methods with specific parameter types** across all possible locations
+- **Methods with array parameters** across all possible locations
+- **Methods with return types** across all possible locations
 
 ---
 
@@ -103,7 +82,7 @@ grep -r "public function.*methodName.*:.*" vendor/magento/module-* --include="*.
 
 When proposing fixes, always include:
 
-1. **Reference code location**: `vendor/magento/module-name/path/to/file.php:line`
+1. **Reference code location**: `vendor/magento/module-name/path/to/file.php:line` (or `app/code/Vendor/Module/...`)
 2. **Original method signature**: Exact signature from reference
 3. **Proposed fix**: Code that matches reference exactly
 4. **Explanation**: Why the fix is needed and how it matches reference
@@ -113,7 +92,7 @@ When proposing fixes, always include:
 /**
  * Fix: Plugin method signature mismatch
  * 
- * Reference: vendor/magento/module-sales-rule/Model/RulesApplier.php:110
+ * Reference: vendor/magento/module-sales-rule/Model/RulesApplier.php:110 (or app/code/Vendor/Module/...)
  * Original: public function applyRules($item, $rules, $skipValidation, array $couponCodes = [])
  * 
  * Issue: Plugin method missing optional parameter
@@ -133,90 +112,54 @@ public function beforeApplyRules(
 
 ---
 
-## 🔍 Advanced Search Techniques
+## 🔍 Advanced Search Principles
 
 ### Finding Related Classes
-```bash
-# Find classes that extend a specific class
-grep -r "extends.*ClassName" vendor/magento/module-* --include="*.php"
-
-# Find classes that implement an interface
-grep -r "implements.*InterfaceName" vendor/magento/module-* --include="*.php"
-
-# Find classes in specific namespace
-grep -r "namespace.*Magento\\ModuleName" vendor/magento/module-* --include="*.php"
-```
+**AI tools should search for:**
+- **Classes that extend a specific class** across all possible locations
+- **Classes that implement an interface** across all possible locations
+- **Classes in specific namespaces** across all possible locations
 
 ### Finding Configuration
-```bash
-# Find DI configuration
-find vendor/magento/ -name "di.xml" -exec grep -l "ClassName" {} \;
-
-# Find event observers
-find vendor/magento/ -name "events.xml" -exec grep -l "eventName" {} \;
-
-# Find API endpoints
-find vendor/magento/ -name "webapi.xml" -exec grep -l "serviceName" {} \;
-```
+**AI tools should search for:**
+- **DI configuration files** across all possible locations
+- **Event observer configurations** across all possible locations
+- **API endpoint configurations** across all possible locations
 
 ### Finding Dependencies
-```bash
-# Find where a class is used
-grep -r "use.*ClassName" vendor/magento/module-* --include="*.php"
-
-# Find method calls
-grep -r "->methodName(" vendor/magento/module-* --include="*.php"
-
-# Find static method calls
-grep -r "::methodName(" vendor/magento/module-* --include="*.php"
-```
+**AI tools should search for:**
+- **Where a class is used** across all possible locations
+- **Method calls** across all possible locations
+- **Static method calls** across all possible locations
 
 ---
 
-## 🎯 Specific Module Workflows
+## 🎯 Specific Module Principles
 
-### Sales Module Workflows
-```bash
-# Find sales-related classes
-find vendor/magento/module-sales/ -name "*.php" -exec grep -l "class.*Order" {} \;
+### Sales Module Principles
+**AI tools should search for:**
+- **Sales-related classes** across all possible locations
+- **Order processing methods** across all possible locations
+- **Invoice methods** across all possible locations
 
-# Find order processing methods
-grep -r "public function.*Order" vendor/magento/module-sales/ --include="*.php"
+### Catalog Module Principles
+**AI tools should search for:**
+- **Product-related classes** across all possible locations
+- **Category methods** across all possible locations
+- **Attribute methods** across all possible locations
 
-# Find invoice methods
-grep -r "public function.*Invoice" vendor/magento/module-sales/ --include="*.php"
-```
-
-### Catalog Module Workflows
-```bash
-# Find product-related classes
-find vendor/magento/module-catalog/ -name "*.php" -exec grep -l "class.*Product" {} \;
-
-# Find category methods
-grep -r "public function.*Category" vendor/magento/module-catalog/ --include="*.php"
-
-# Find attribute methods
-grep -r "public function.*Attribute" vendor/magento/module-catalog/ --include="*.php"
-```
-
-### Customer Module Workflows
-```bash
-# Find customer-related classes
-find vendor/magento/module-customer/ -name "*.php" -exec grep -l "class.*Customer" {} \;
-
-# Find address methods
-grep -r "public function.*Address" vendor/magento/module-customer/ --include="*.php"
-
-# Find group methods
-grep -r "public function.*Group" vendor/magento/module-customer/ --include="*.php"
-```
+### Customer Module Principles
+**AI tools should search for:**
+- **Customer-related classes** across all possible locations
+- **Address methods** across all possible locations
+- **Group methods** across all possible locations
 
 ---
 
 ## ✅ Quality Assurance
 
 ### Before Proposing Any Fix
-- [ ] **Reference code verified** in vendor/magento/
+- [ ] **Reference code verified** in all possible locations (vendor/magento/, app/code/, dev/)
 - [ ] **Method signature matches** exactly
 - [ ] **Parameter types confirmed** correct
 - [ ] **Return types verified** match
@@ -224,17 +167,11 @@ grep -r "public function.*Group" vendor/magento/module-customer/ --include="*.ph
 - [ ] **Inheritance chain** understood
 - [ ] **Interface compliance** confirmed
 
-### Common Validation Commands
-```bash
-# Verify class exists
-find vendor/magento/ -name "*.php" -exec grep -l "class.*ExactClassName" {} \;
-
-# Verify method exists
-grep -r "public function.*exactMethodName" vendor/magento/module-* --include="*.php"
-
-# Verify interface exists
-find vendor/magento/ -name "*.php" -exec grep -l "interface.*ExactInterfaceName" {} \;
-```
+### Common Validation Principles
+**AI tools should verify:**
+- **Class exists** across all possible locations where Magento classes exist
+- **Method exists** across all possible locations where Magento classes exist
+- **Interface exists** across all possible locations where Magento classes exist
 
 ---
 
@@ -248,7 +185,7 @@ find vendor/magento/ -name "*.php" -exec grep -l "interface.*ExactInterfaceName"
 5. **Look in framework** - some classes are in framework module
 
 ### Common Issues
-- **Module not installed** - check if module exists in vendor/
+- **Module not installed** - check if module exists in vendor/, app/code/, or dev/
 - **Wrong namespace** - verify namespace structure
 - **Method renamed** - check for method name changes between versions
 - **Interface changed** - verify interface compatibility
@@ -263,4 +200,4 @@ find vendor/magento/ -name "*.php" -exec grep -l "interface.*ExactInterfaceName"
 
 ---
 
-**Remember**: When in doubt, check the reference code in `vendor/magento/` before making any assumptions or proposals. 
+**Remember**: When in doubt, check the reference code in all possible locations (`vendor/magento/`, `app/code/`, `dev/`) before making any assumptions or proposals. 
